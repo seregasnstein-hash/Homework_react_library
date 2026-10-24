@@ -7,6 +7,7 @@ function BookDetails() {
   const books = useSelector((state) => state.books);
   const book = books.find((book) => book.id === Number(id));
   const dispatch = useDispatch();
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const navigate = useNavigate();
   if (!book) {
     return <h2>Книга не найдена</h2>;
@@ -36,20 +37,22 @@ function BookDetails() {
           </strong>
           {book.category}
         </p>
-        <div className="btn-action">
-          <Link className="book-link" to={`/book/${id}/edit`}>
-            Редактировать книгу
-          </Link>
-          <button
-          className="delete-book"
-            onClick={() => {
-              dispatch(deleteBook(book.id));
-              navigate("/");
-            }}
-          >
-            Удалить
-          </button>
-        </div>
+        {currentUser && (
+          <div className="btn-action">
+            <Link className="book-link" to={`/book/${id}/edit`}>
+              Редактировать книгу
+            </Link>
+            <button
+              className="delete-book"
+              onClick={() => {
+                dispatch(deleteBook(book.id));
+                navigate("/");
+              }}
+            >
+              Удалить
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

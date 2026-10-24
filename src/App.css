@@ -361,12 +361,14 @@ button:active {
     font-size: 24px;
   }
 }
-.remove-favorite, .delete-book {
+.remove-favorite,
+.delete-book {
   background-color: #713b35;
   border-color: #a85e52;
 }
 
-.remove-favorite:hover, .delete-book:hover{
+.remove-favorite:hover,
+.delete-book:hover {
   background-color: #914a40;
   border-color: #d17a6c;
 }
@@ -417,9 +419,142 @@ nav a.active {
   font-size: 16px;
   margin: 15px 0;
 }
-.btn-action{
+.btn-action {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Формы входа и регистрации */
+.auth-form {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #252d26;
+  border: 1px solid #68775d;
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.auth-form h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #d8bd79;
+  text-align: center;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #eee5ce;
+}
+
+.auth-form input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #1b211c;
+  color: #eee5ce;
+  border: 1px solid #68775d;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #d8bd79;
+  box-shadow: 0 0 0 2px rgb(216 189 121 / 15%);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #68775d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-form button:hover {
+  background-color: #7e906f;
+}
+
+.auth-form .error {
+  color: #ff8c82;
+  text-align: center;
+}
+
+.auth-form .success {
+  color: #a8d5a2;
+  text-align: center;
+}
+
+.auth-form a {
+  color: #d8bd79;
+  text-decoration: none;
+}
+
+.auth-form a:hover {
+  text-decoration: underline;
+}
+
+.auth-form p {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .auth-form {
+    padding: 20px;
+    margin: 25px auto;
+  }
+}
+
+/* Панель пользователя */
+.user-panel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 10px;
+}
+
+.user-name {
+  color: #d8bd79;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #eee5ce;
+  border: 1px solid #68775d;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  margin: 0;
+}
+
+.logout-button:hover {
+  background-color: #68775d;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .user-panel {
+    margin-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

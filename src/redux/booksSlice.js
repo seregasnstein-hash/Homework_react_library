@@ -37,6 +37,15 @@ const initialState = JSON.parse(localStorage.getItem("books")) || [
     description: "Завершение истории Войны Кольца.",
     category: "Фэнтези",
   },
+  {
+    id: 5,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeQOmLK-45NIDIk2BxEn5kaepbYOB3KpPCFV7CMSwTlw&s=10",
+    title: "Шерлок Холмс",
+    year: 1999,
+    description: "Приключения Шерлока Холмса и Доктора Ватсона",
+    category: "Детектив",
+  },
 ];
 
 const booksSlice = createSlice({
