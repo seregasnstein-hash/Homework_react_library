@@ -7,6 +7,7 @@ import BookCard from "../components/BookCard";
 
 function Home() {
   const books = useSelector((state) => state.books);
+  const categories = [...new Set(books.map((book) => book.category))];
   const favorite = useSelector((state) => state.favorite);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
@@ -25,11 +26,13 @@ function Home() {
 
   return (
     <div>
-      <BookSearch search={search} setSearch={setSearch} />
-      <CategoryFilter category={category} setCategory={setCategory} />
-      {filteredBooks.length === 0 && (
-        <p className="no-books">Книги не найдены</p>
-      )}
+      
+        <BookSearch search={search} setSearch={setSearch} />
+        <CategoryFilter category={category} setCategory={setCategory}  categories={categories}/>
+        {filteredBooks.length === 0 && (
+          <p className="no-books">Книги не найдены</p>
+        )}
+     
       <section className="books-grid">
         {filteredBooks.map((book) => (
           <div key={book.id}>

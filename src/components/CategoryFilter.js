@@ -1,4 +1,4 @@
-function CategoryFilter({ category, setCategory }) {
+function CategoryFilter({ category, setCategory, categories }) {
   return (
     <select
       className="category-filter"
@@ -6,7 +6,11 @@ function CategoryFilter({ category, setCategory }) {
       onChange={(event) => setCategory(event.target.value)}
     >
       <option value="Все категории">Все категории</option>
-      <option value="Фэнтези">Фэнтези</option>
+      {categories.map((item) => (
+        <option key={item} value={item}>
+          {item}
+        </option>
+      ))}
     </select>
   );
 }

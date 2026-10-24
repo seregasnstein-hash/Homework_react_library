@@ -56,8 +56,19 @@ const booksSlice = createSlice({
         book.category = updatedBook.category;
       }
     },
+    addBook: (state, action) => {
+      const newBook = {
+        id: Math.max(0, ...state.map((book) => book.id)) + 1,
+        ...action.payload,
+      };
+
+      state.push(newBook);
+    },
+    deleteBook: (state, action) => {
+      return state.filter((book) => book.id !== action.payload);
+    },
   },
 });
 
-export const { editBook } = booksSlice.actions;
+export const { editBook, addBook, deleteBook } = booksSlice.actions;
 export default booksSlice.reducer;

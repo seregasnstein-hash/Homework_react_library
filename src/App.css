@@ -12,9 +12,9 @@ body {
 }
 
 .App {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 30px 10px;
   text-align: center;
 }
 
@@ -280,7 +280,8 @@ button:active {
   }
 }
 
-.edit-book {
+.edit-book,
+.add-book {
   max-width: 600px;
   margin: 0 auto;
   padding: 25px;
@@ -291,25 +292,31 @@ button:active {
   text-align: left;
 }
 
-.edit-book h1 {
+.edit-book h1,
+.add-book h1 {
   text-align: center;
   font-size: 28px;
 }
 
-.edit-book form {
+.edit-book form,
+.add-book form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.edit-book label {
+.edit-book label,
+.add-book label {
   color: #e4ca8b;
   font-size: 16px;
 }
 
 .edit-book input,
 .edit-book textarea,
-.edit-book select {
+.edit-book select,
+.add-book input,
+.add-book textarea,
+.add-book select {
   width: 100%;
   padding: 12px 14px;
   background-color: #202820;
@@ -323,36 +330,43 @@ button:active {
 
 .edit-book input:focus,
 .edit-book textarea:focus,
-.edit-book select:focus {
+.edit-book select:focus,
+.add-book input:focus,
+.add-book textarea:focus,
+.add-book select:focus {
   border-color: #d8bd79;
   box-shadow: 0 0 0 3px rgb(216 189 121 / 15%);
 }
 
-.edit-book textarea {
+.edit-book textarea,
+.add-book textarea {
   min-height: 120px;
   resize: vertical;
 }
 
-.edit-book button {
+.edit-book button,
+.add-book button {
   align-self: flex-start;
   margin-top: 10px;
 }
 
 @media (max-width: 600px) {
-  .edit-book {
+  .edit-book,
+  .add-book {
     padding: 16px;
   }
 
-  .edit-book h1 {
+  .edit-book h1,
+  .add-book h1 {
     font-size: 24px;
   }
 }
-.remove-favorite {
+.remove-favorite, .delete-book {
   background-color: #713b35;
   border-color: #a85e52;
 }
 
-.remove-favorite:hover {
+.remove-favorite:hover, .delete-book:hover{
   background-color: #914a40;
   border-color: #d17a6c;
 }
@@ -396,4 +410,16 @@ nav a.active {
   color: #fff2c9;
   border-color: #c4a75c;
   box-shadow: 0 0 10px #d8bd7920;
+}
+
+.success {
+  color: #a8c686;
+  font-size: 16px;
+  margin: 15px 0;
+}
+.btn-action{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
